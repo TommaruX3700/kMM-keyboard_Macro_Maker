@@ -1,6 +1,32 @@
 {
     "tasks": [
         {
+            "label": "msvc build",
+            "type": "shell",
+            "command": "C:\\msys64\\mingw64\\bin\\mingw32-make.exe",
+            "args": [
+                "make",
+                "--directory=${workspaceFolder};",
+                /*
+                Prima di usare questo, verificare se l'interconnessione specificata
+                nel Makefile generale funziona o meno
+
+                "make",
+                "--directory=${workspaceFolder}/headers",
+                "--directory=${workspaceFolder}/src"
+                */
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"            
+        },
+
+        {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
