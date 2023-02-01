@@ -35,8 +35,6 @@ PROJECT:
         - keyLayout.h
             [ contains all key references for all the different layouts, maybe with pointers since they're fast af ]
 
-        -
-
     Classes:
         - Keyboard
         - Macro
