@@ -1,6 +1,7 @@
 #include <iostream>
 #include <QApplication>
 #include <QPushButton>
+#include <keyLayout>
 
 #define VERSION 0.1
 
@@ -32,7 +33,7 @@ IDEAS:
 
 PROJECT:
     Headers:
-        - keyLayout.h
+        - keyLayout
             [ contains all key references for all the different layouts, maybe with pointers since they're fast af ]
 
     Classes:
