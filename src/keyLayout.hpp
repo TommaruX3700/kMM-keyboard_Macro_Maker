@@ -1,3 +1,5 @@
+#include <map>
+
 /*
     Header are used during pre-processing of the code, so what is inside here
     should be compiled before main programm compilation.
@@ -11,19 +13,23 @@
 
 namespace keys 
 {
-    class italian
+    class keyboard
     {
     private:
         // put here references 
     public:
+        void newMacro();
+        void editMacro();
+        void renameMacro();
+        void deleteMacro();
         // put here references via pointers 
     };
-
-    class usa_ansi
-    {
-        private:
-
-        public:
-    };
-    
 }
+
+std::map <char, char> it_IT = {
+    { 'A', '1' } //undestand first how to recognize keys
+};
+
+std::map <char, char> us_ANSI = {
+    { 'A', '1' } //undestand first how to recognize keys
+};

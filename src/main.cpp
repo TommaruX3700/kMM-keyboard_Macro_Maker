@@ -10,6 +10,7 @@
 #define VERSION 0.1
 
 using namespace std;
+using namespace keys;
 
 int main (int argc, char **argv)
 {
@@ -35,7 +36,8 @@ PROBLEMS:
 
 IDEAS:
     - make code understand on which system its executed
-    - 
+    - i may set-up macros as linked lists or with a data structure dinamically setted up, to check 
+      and even 
 
 PROJECT:
     Headers:
