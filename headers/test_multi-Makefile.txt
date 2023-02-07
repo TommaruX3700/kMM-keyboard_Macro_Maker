@@ -1,8 +1,0 @@
-CXX = g++
-#CXXFLAGS += -g -Wall
-
-MAKE := make
-TARGET = keyLayout.o
-
-all:
-	$(TARGET) -o ../out/

@@ -8,11 +8,11 @@ LDLIBS += -QtCore -QtGui -QApplication -PBushButton
 TARGET_EXEC := ./out/kMM #define executing location in my project
 
 SRC_DIR := ./src
-HEADERS_DIR := ./headers
+#HEADERS_DIR := ./headers
 BUILD_DIR := ./out
 
 compile_all:
-	$(SRC_DIR)/main.cpp $(HEADERS_DIR)/keyLayout.cpp -o $(BUILD_DIR)/kMM
+	$(SRC_DIR)/main.cpp -o $(BUILD_DIR)/kMM
 
 run:
 	./$(TARGET_EXEC)
