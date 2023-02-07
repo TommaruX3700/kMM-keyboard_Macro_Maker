@@ -1,7 +1,7 @@
 #include <iostream>
 #include <QApplication>
 #include <QPushButton>
-#include <keyLayout>
+#include <keys>
 
 #define VERSION 0.1
 
