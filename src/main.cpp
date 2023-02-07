@@ -1,7 +1,11 @@
 #include <iostream>
 #include <QApplication>
 #include <QPushButton>
-#include <keys>
+
+//USER-DEFINED
+//Note that user defined libraries are with "" which idicates they're located inside the current working folder
+
+#include "keyLayout.hpp"
 
 #define VERSION 0.1
 
@@ -17,6 +21,8 @@ int main (int argc, char **argv)
 
     return app.exec(); //launchs event loop
 }
+
+
 
 /*  
 TODO:
