@@ -1,3 +1,4 @@
+/* old task config
 {
     "tasks": [
         {
@@ -15,6 +16,7 @@
                 "--directory=${workspaceFolder}/headers",
                 "--directory=${workspaceFolder}/src"
                 */
+/*
             ],
             "group": {
                 "kind": "build",
@@ -51,4 +53,56 @@
         }
     ],
     "version": "2.0.0"
+} 
+*/
+
+////////////////////////////////////////////////////////////////////////
+
+//test using g++ as a compiler
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "tasks": [
+        {
+            "label": "Compiler",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-c",
+                "${workspaceFolder}\\src\\main.cpp",
+                "-I${workspaceFolder}\\src",
+                "-IC:\\Qt\\6.4.2\\mingw_64\\include\\QtCore",
+                "-IC:\\Qt\\6.4.2\\mingw_64\\include\\QtGui",
+                "-IC:\\Qt\\6.4.2\\mingw_64\\include\\QtWidgets",
+                "-IC:\\Qt\\6.4.2\\mingw_64\\include"
+            ]
+        },
+        {
+            "label": "Linker",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${workspaceFolder}\\main.o",
+                "-o",
+                "${workspaceFolder}\\out\\kMM.exe",
+                "-LC:\\Qt\\6.4.2\\mingw_64\\libs",
+                "-lmingw32",
+                "-lQtCore",
+                "-lQtGui",
+                "-lQApplication",
+                "-PBushButton"
+            ]
+        },
+        {
+            "label": "g++ - Build the application",
+            "dependsOn": [
+                "Compiler",
+                "Linker"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
 }
