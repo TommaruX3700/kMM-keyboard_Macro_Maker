@@ -1,7 +1,8 @@
 #IMPLICIT RULES
 CXX = g++ #define implici rule about what compiler to use
-CXXFLAGS += -g -Wall -IC:\Qt\6.4.2\mingw_64\include -IC:\Qt\6.4.2\mingw_64\include\QtCore -IC:\Qt\6.4.2\mingw_64\include\QtGui -IC:\Qt\6.4.2\mingw_64\include\QtWidgets 
-LDFLAGS += -C:\Qt\6.4.2\mingw_64\libs #extra flags 
+CXXFLAGS += -g -Wall 
+INCLUDES = -IC:\Qt\6.4.2\mingw_64\include -IC:\Qt\6.4.2\mingw_64\include\QtCore -IC:\Qt\6.4.2\mingw_64\include\QtGui -IC:\Qt\6.4.2\mingw_64\include\QtWidgets 
+LIBS = -LC:\Qt\6.4.2\mingw_64\libs
 LDLIBS += -LQtCore -LQtGui -LQApplication -LPBushButton
 
 #USER-DEFINED RULES
@@ -15,11 +16,11 @@ program: main.o keyLayout.o
 	$(CXX) $(OUT_DIR)\main.o $(OUT_DIR)\keyLayout.o -o $(BUILD_DIR)\kMM
 
 main.o: #clean
-	$(CXX) -c $(SRC_DIR)\main.cpp -o $(OUT_DIR)\main.o
+	$(CXX) $(INCLUDES) $(LIBS) -c $(SRC_DIR)\main.cpp -o $(OUT_DIR)\main.o
 
 keyLayout.o: #clean
-	$(CXX) -c $(SRC_DIR)\keyLayout.cpp -o $(OUT_DIR)\keyLayout.o
-
+	$(CXX) $(INCLUDES) $(LIBS) -c $(SRC_DIR)\keyLayout.cpp -o $(OUT_DIR)\keyLayout.o
+	
 run: program
 	.\$(TARGET_EXEC)
 
