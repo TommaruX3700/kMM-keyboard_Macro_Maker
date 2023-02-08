@@ -1,6 +1,6 @@
 #include <iostream>
-#include <QtWidgets/qapplication.h>
-#include <QtWidgets/qpushbutton.h>
+#include <QApplication>
+#include <QPushButton>
 
 //USER-DEFINED
 //Note that user defined libraries are with "" which idicates they're located inside the current working folder
