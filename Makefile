@@ -14,7 +14,7 @@ BUILD_DIR := .\out\build
 #TARGETS
 program: main.o keyLayout.o
 	@echo "####################################################"MAKE_OUTPUT :: ASSEMBLING kMM"##############################################################"
-	$(CXX) $(OUT_DIR)\main.o $(OUT_DIR)\keyLayout.o -o $(BUILD_DIR)\kMM
+	$(CXX) $(OUT_DIR)\main.o $(OUT_DIR)\keyLayout.o -o $(BUILD_DIR)\kMM $(LIBS) $(LDLIBS)
 
 main.o: clean
 	$(CXX) $(INCLUDES) $(LIBS) -c $(SRC_DIR)\main.cpp -o $(OUT_DIR)\main.o
