@@ -13,22 +13,23 @@ BUILD_DIR := .\out\build
 
 #TARGETS
 program: main.o keyLayout.o
+	@echo "####################################################"MAKE_OUTPUT :: ASSEMBLING kMM"##############################################################"
 	$(CXX) $(OUT_DIR)\main.o $(OUT_DIR)\keyLayout.o -o $(BUILD_DIR)\kMM
 
 main.o: clean
 	$(CXX) $(INCLUDES) $(LIBS) -c $(SRC_DIR)\main.cpp -o $(OUT_DIR)\main.o
+	@echo "####################################################"MAKE_OUTPUT :: main BUILT"##############################################################"
 
 keyLayout.o: clean
 	$(CXX) $(INCLUDES) $(LIBS) -c $(SRC_DIR)\keyLayout.cpp -o $(OUT_DIR)\keyLayout.o
+	@echo "####################################################"MAKE_OUTPUT :: keyLayout BUILT"##############################################################"
 
 run: program
 	.\$(TARGET_EXEC)
-
+	@echo "####################################################"MAKE_OUTPUT :: BUILT SUCCESSFULL"##############################################################"
 
 .PHONY: clean #makes "clean" a pseudo-target
 
 clean: #removing all old objects before re-build all
 	del /f $(OUT_DIR)\*.o 
-	@echo( ############################################################################################################
-	@echo( __________________________"MAKE_OUTPUT :: All old built objects removed"____________________________________
-	@echo( ############################################################################################################
+	@echo "####################################################"MAKE_OUTPUT :: OLD BUILT FILES REMOVED"##############################################################"
