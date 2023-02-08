@@ -15,18 +15,20 @@ BUILD_DIR := .\out\build
 program: main.o keyLayout.o
 	$(CXX) $(OUT_DIR)\main.o $(OUT_DIR)\keyLayout.o -o $(BUILD_DIR)\kMM
 
-main.o: #clean
+main.o: clean
 	$(CXX) $(INCLUDES) $(LIBS) -c $(SRC_DIR)\main.cpp -o $(OUT_DIR)\main.o
 
-keyLayout.o: #clean
+keyLayout.o: clean
 	$(CXX) $(INCLUDES) $(LIBS) -c $(SRC_DIR)\keyLayout.cpp -o $(OUT_DIR)\keyLayout.o
-	
+
 run: program
 	.\$(TARGET_EXEC)
 
 
-#.PHONY: clean #makes "clean" a pseudo-target
+.PHONY: clean #makes "clean" a pseudo-target
 
-#clean: #removing all old objects before re-build all
-#	rm -f $(OUT_DIR)/*.o 
-#	echo "MAKE_OUTPUT :: All old built objects removed"
+clean: #removing all old objects before re-build all
+	del /f $(OUT_DIR)\*.o 
+	@echo( ############################################################################################################
+	@echo( __________________________"MAKE_OUTPUT :: All old built objects removed"____________________________________
+	@echo( ############################################################################################################
