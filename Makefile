@@ -11,6 +11,9 @@ SRC_DIR := .\src
 OUT_DIR := .\out
 BUILD_DIR := .\out\build
 
+#posso usare anche variabili d'ambiente
+
+
 #TARGETS
 program: main.o keyLayout.o
 	@echo "####################################################"MAKE_OUTPUT :: ASSEMBLING kMM"##############################################################"

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <map>
 
+#include "header.h"
+
 /*
     Header are used during pre-processing of the code, so what is inside here
     should be compiled before main programm compilation.
@@ -12,19 +14,8 @@
         
 */
 
-namespace keys 
-{
-    class keyboard
-    {
-    private:
-        // put here references 
-    public:
-        void newMacro();
-        void editMacro();
-        void renameMacro();
-        void deleteMacro();
-        // put here references via pointers 
-    };
+void keyboard :: newMacro () { //definizione della funzione
+
 }
 
 std::map <char, char> it_IT = {
