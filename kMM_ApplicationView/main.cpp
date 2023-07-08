@@ -17,8 +17,10 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
     MainWindow w;
     w.show();
+
     return a.exec();
 }
 
