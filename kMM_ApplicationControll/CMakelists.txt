@@ -1,1 +1,13 @@
-#sfdf
+cmake_minimum_required(VERSION 3.10)
+
+project(kMM_controller)
+
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(../${PROJECT_SOURCE_DIR}/build)
+
+include_directories(headers)
+
+file(GLOB SOURCES source/*.cpp)
+
+target_sources(${PROJECT_NAME} PRIVATE ${SOURCES})
