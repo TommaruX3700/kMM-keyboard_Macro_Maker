@@ -4,7 +4,9 @@ project(kMM_controller)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(../${PROJECT_SOURCE_DIR}/build)
+set(CMAKE_BINARY_DIR ${PROJECT_SOURCE_DIR}/../build-kMM_ApplicatonControll)
+
+add_executable(${PROJECT_SOURCE_DIR}/sources/main.cpp)
 
 include_directories(headers)
 
