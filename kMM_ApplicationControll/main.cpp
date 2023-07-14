@@ -47,11 +47,8 @@ __declspec(dllexport) LRESULT CALLBACK KeyboardEvent (int nCode, WPARAM wParam, 
                PostQuitMessage(0);
             }
 
-
-
-
-            //printf("key = %c\n", key);
-            printf("ha ha, I intercepted your [%c] and changed it to [%c]\n", key, key+1);
+            //printf("key = %c\n", key);nnnnnnnnnnnn porcodio
+            printf("Key pressed [%c] \n", key);
 
             SHIFT_key = 0;
             CTRL_key = 0;
@@ -92,7 +89,7 @@ int main(int argc, char** argv)
     HANDLE hThread;
     DWORD dwThread;
 
-    hThread = CreateThread(NULL,NULL,(LPTHREAD_START_ROUTINE)   my_HotKey, (LPVOID) argv[0], NULL, &dwThread);
+    hThread = CreateThread(NULL ,NULL ,(LPTHREAD_START_ROUTINE) my_HotKey, (LPVOID) argv[0], NULL, &dwThread);
 
     //ShowWindow(FindWindowA("ConsoleWindowClass", NULL), false);
 
