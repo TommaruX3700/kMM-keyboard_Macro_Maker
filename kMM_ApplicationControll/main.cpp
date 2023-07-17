@@ -1,4 +1,4 @@
-#define _WIN32_WINNT 0x0400
+#define _WIN32_WINNT 0x0400 //
 #pragma comment( lib, "user32.lib" )
 
 #include <windows.h>
@@ -8,6 +8,19 @@ HHOOK hKeyboardHook;
 
 __declspec(dllexport) LRESULT CALLBACK KeyboardEvent (int nCode, WPARAM wParam, LPARAM lParam)
 {
+    /*
+    *   __declspec(): 
+    *       Microsoft C++ extended attribute syntax.
+    *       Specifies that an instance of the given type is to be stored with a Microsoft-specific storage-class attribute.
+    *       Doc: https://learn.microsoft.com/en-us/cpp/cpp/declspec?view=msvc-170
+    *   
+    *   dllexport: 
+    *       
+    *       Doc: https://learn.microsoft.com/en-us/cpp/cpp/dllexport-dllimport?view=msvc-170
+    * 
+    * 
+    */
+
     DWORD SHIFT_key=0;
     DWORD CTRL_key=0;
     DWORD ALT_key=0;
@@ -30,36 +43,32 @@ __declspec(dllexport) LRESULT CALLBACK KeyboardEvent (int nCode, WPARAM wParam, 
         CTRL_key = GetAsyncKeyState(VK_CONTROL);
         ALT_key = GetAsyncKeyState(VK_MENU);
 
-        if (key >= 'A' && key <= 'Z')   
-        {
+        printf("Key pressed [%d] \n", key);
 
-            if  (GetAsyncKeyState(VK_SHIFT)>= 0) key +=32;
-
-            if (CTRL_key !=0 && key == 'y' )
-            {
-               MessageBox(NULL, "CTRL-y was pressed\nLaunch your app here", "H O T K E Y", MB_OK); 
-               CTRL_key=0;
-            }
-
-            if (CTRL_key !=0 && key == 'q' )
-            {
-                MessageBox(NULL, "Shutting down", "H O T K E Y", MB_OK); 
-               PostQuitMessage(0);
-            }
-
-            //printf("key = %c\n", key);nnnnnnnnnnnn porcodio
-            printf("Key pressed [%c] \n", key);
-
-            SHIFT_key = 0;
-            CTRL_key = 0;
-            ALT_key = 0;
-
-        }
-
-        //printf("lpszKeyName = %s\n",  lpszKeyName );
+    // if (key >= 'A' && key <= 'Z')   
+    //     {
+    //         if  (GetAsyncKeyState(VK_SHIFT)>= 0) key +=32;
+    //         if (CTRL_key !=0 && key == 'y' )
+    //         {
+    //            MessageBox(NULL, "CTRL-y was pressed\nLaunch your app here", "H O T K E Y", MB_OK); 
+    //            CTRL_key=0;
+    //         }
+    //         if (CTRL_key !=0 && key == 'q' )
+    //         {
+    //             MessageBox(NULL, "Shutting down", "H O T K E Y", MB_OK); 
+    //            PostQuitMessage(0);
+    //         }
+    //         //printf("key = %c\n", key);
+    //         SHIFT_key = 0;
+    //         CTRL_key = 0;
+    //         ALT_key = 0;
+    //     }
+    //  printf("lpszKeyName = %s\n",  lpszKeyName );
     //  printf("%s",  lpszKeyName );
+
     }
-    return CallNextHookEx(hKeyboardHook,    nCode,wParam,lParam);
+    
+    return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);
 }
 
 void MessageLoop()
@@ -89,7 +98,7 @@ int main(int argc, char** argv)
     HANDLE hThread;
     DWORD dwThread;
 
-    hThread = CreateThread(NULL ,NULL ,(LPTHREAD_START_ROUTINE) my_HotKey, (LPVOID) argv[0], NULL, &dwThread);
+    hThread = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE) my_HotKey, (LPVOID) argv[0], NULL, &dwThread);
 
     //ShowWindow(FindWindowA("ConsoleWindowClass", NULL), false);
 
