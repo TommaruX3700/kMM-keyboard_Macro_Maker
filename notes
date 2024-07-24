@@ -1,0 +1,12 @@
+kMM runtime:
+
+Parti dell'applicativo:
+1 - "runner.exe": 
+    # rimane in background e fa da "hook" per l'input utente
+    # all'avvio controlla una lista di macro registrate e le registra in ram (dizionario chiave-valore) in modo da non dover rileggere un file ogni volta che deve eseguire la macro
+    # si stoppa ogni volta che viene richiamata l'interfaccia di configurazione
+2 - "interface.exe":
+    # non esegue modifiche fino a quando il runner non è killato
+    # interfaccia che si apre tramite una macro pre-definita
+    # permette di modificare le macro e visualizzarle
+    # riavvia il runner
