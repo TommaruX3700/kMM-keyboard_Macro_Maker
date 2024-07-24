@@ -1,3 +1,10 @@
 {
-    "cmake.sourceDirectory": "C:/Users/TomX37/Documents/REPOS/kMM-keyboard_Macro_Maker/files-kMM_Application/QtInterface"
+    "files.associations": {
+        "qwidget": "cpp"
+    },
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "clangd.arguments": [ "-header-insertion=never" ],
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true
 }
