@@ -1,9 +1,0 @@
-# ninja log v5
-20	1150	7435320908204264	QtInterface_autogen/timestamp	c060f85197080760
-20	1150	7435320908204264	QtInterface_autogen/mocs_compilation.cpp	c060f85197080760
-20	1150	7435320908204264	C:/Users/TomX37/Documents/REPOS/kMM-keyboard_Macro_Maker/files-kMM_Application/build-QtInterface-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/QtInterface_autogen/timestamp	c060f85197080760
-20	1150	7435320908204264	C:/Users/TomX37/Documents/REPOS/kMM-keyboard_Macro_Maker/files-kMM_Application/build-QtInterface-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/QtInterface_autogen/mocs_compilation.cpp	c060f85197080760
-1155	2890	7435320927798453	CMakeFiles/QtInterface.dir/main.cpp.obj	68f98b97df60213e
-1163	3061	7435320929503857	CMakeFiles/QtInterface.dir/mainwindow.cpp.obj	1cc650fd8c5757eb
-1151	3073	7435320929619013	CMakeFiles/QtInterface.dir/QtInterface_autogen/mocs_compilation.cpp.obj	1c22ad65426b8911
-3073	3531	7435320934167402	QtInterface.exe	2c521ce5a2100b31
